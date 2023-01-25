@@ -1,0 +1,137 @@
+/* Header */
+header {
+    height: 80vh;
+    place-content: center;
+    grid-template-columns: 1fr;
+}
+
+header h1 {
+    padding: 0;
+    margin: 0 0 0.5em; 
+    text-align: center;
+}
+
+main {
+    display: block;
+}
+
+section:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50vw - 12vw));
+    justify-items: center;
+    padding: 6em 0 3em;
+}
+
+section:first-of-type h2 {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 0.3em;
+    width: 100%;
+}
+
+section:first-of-type img {
+    order: -1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    max-width: 350px;
+}
+
+section:nth-of-type(2) h2 {
+    text-align: center;
+}
+
+section:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+section:nth-of-type(2) ul li {
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-of-type(2) ul li a {
+    display: flex;
+    text-decoration: none;
+}
+
+section:nth-of-type(2) ul a::before {
+    content: '';
+    background: rgb(0, 0, 0);
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    transition: 350ms ease-in;
+}
+
+section:nth-of-type(2) ul a:hover::before {
+    opacity: 0.4;
+}
+
+section:nth-of-type(2) ul li a:hover h3 {
+    bottom: 0.5em;
+}
+
+section:nth-of-type(2) ul li img {
+    height: 260px;
+    object-fit: cover;
+}
+
+section:nth-of-type(2) ul li h3 {
+    width: 100%;
+    text-align: center;
+    color: var(--beige);
+    position: absolute;
+    bottom: -2em;
+    transition: 350ms ease-in;
+}
+
+@media only screen and (max-width: 1023px) {
+    header {
+        padding: 0 10%;
+    }
+
+    section:first-of-type {
+        justify-content: space-between;
+    }
+
+    section:nth-of-type(2) ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section:first-of-type {
+        grid-template-columns: 1fr;
+    }
+
+    section:first-of-type img {
+        margin-bottom: 1em;
+    }
+
+    section:nth-of-type(2) ul {
+        grid-template-columns: 1fr;
+    }
+
+    section:nth-of-type(2) ul li img {
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    section:nth-of-type(2) ul a::before {
+        opacity: 0.4;
+    }
+
+    section:nth-of-type(2) ul li h3 {
+        bottom: 0.5em;
+    }
+
+    section:nth-of-type(2) ul li img {
+        height: 210px;
+    }
+}

@@ -1,0 +1,253 @@
+/* Imports */
+@import url("https://use.typekit.net/yro8zik.css");
+
+:root {
+    --beige: rgb(250, 235, 215);
+    --black: rgb(41, 41, 41);
+    --green: rgb(85, 139, 110);
+}
+
+/* Algemene CSS */
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;  
+}
+
+h1 {
+    font-family: macho, sans-serif;
+    font-weight: 700;
+    font-size: 4.375em;
+    line-height: 1.2;
+    color: var(--beige);
+}
+
+h1 span {
+    font-family: macho, sans-serif;
+    font-weight: 900;
+}
+
+h2 {
+    margin: 0 0 30px;
+    font-family: macho, sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: var(--green);
+}
+
+h3 {
+    font-family: macho, sans-serif;
+    font-weight: 700;
+    font-size: 1.375em;
+}
+
+p, li, a {
+    font-family: macho, sans-serif;
+    font-weight: 400;
+    font-size: 1.125em;
+    color: var(--black);
+}
+
+img {
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    align-items: center;
+    background-color: var(--green);
+}
+
+header a {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    max-width: fit-content;
+    padding: 10px 15px;
+    border-radius: 0.2em;
+    margin: 15px;
+    background: var(--beige);
+    text-decoration: none;
+}
+
+header h1 {
+    padding-left: 10vw;
+}
+
+header p {
+    text-align: center;
+    color: var(--beige);
+}
+
+header img {
+    padding: 3em 10vw 3em 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        place-content: inherit;
+        align-items: inherit;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    header img {
+        padding: 5% 10% 5%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 3em;
+    }
+
+    header img {
+        padding: 5% 10% 10%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+/* Main */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    background-color: var(--beige);
+    padding: 0 10vw;
+}
+
+section {
+    display: grid;
+    padding: 3em 0;
+}
+
+article {
+    padding: 3em 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+article h2 {
+    margin-bottom: 15px;
+}
+
+article:first-of-type {
+    max-width: 38em;
+    padding-top: 6em;
+}
+
+article:first-of-type h2,
+article:first-of-type p {
+    text-align: center;
+}
+
+article:nth-of-type(2),
+article:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5em;
+    align-items: center;
+}
+
+article:nth-of-type(2) h2 {
+    display: flex;
+    align-items: flex-end;
+}
+
+article:nth-of-type(2) p {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+article:nth-of-type(2) img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+main article:nth-of-type(2) div p {
+    margin-bottom: 1em;
+}
+
+main article:nth-of-type(2) div p:last-of-type {
+    margin-bottom: 0;
+}
+
+article:nth-of-type(3) {
+    place-items: center;
+}
+
+article:nth-of-type(3) h2,
+article:nth-of-type(3) p,
+article:nth-of-type(3) a,
+article:nth-of-type(3) iframe {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+article:nth-of-type(3) a {
+    margin: 1em 0 2.5em;
+}
+
+@media only screen and (max-width: 1023px) {
+    article:nth-of-type(2) {
+        display: block;
+    }
+
+    article:nth-of-type(2) p {
+        margin-bottom: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    article:first-of-type h2, 
+    article:first-of-type p {
+        text-align: left;
+    }
+
+    article:nth-of-type(3) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    article {
+        padding: 1.5em 0;
+    }
+
+    article:first-of-type {
+        padding-top: 3em;
+    }
+}
+ 
+/* Footer */
+footer {
+    background-color: var(--green);
+}
+
+footer p {
+    padding: 1em 0;
+    text-align: center;
+    color: var(--beige);
+}
